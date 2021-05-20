@@ -54,6 +54,8 @@ nav {
   background-color: white;
   text-align: center;
   line-height: 60px;
+  padding: 0% 15% 0% 15%;
+  justify-content: center;
 }
 
 nav a {

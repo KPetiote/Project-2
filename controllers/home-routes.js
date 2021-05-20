@@ -6,21 +6,7 @@ const withAuth = require('../utils/auth');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-//     const dbGalleryData = await Gallery.findAll({
-//       include: [
-//         {
-//           model: Painting,
-//           attributes: ['filename', 'description'],
-//         },
-//       ],
-//     });
-// console.log(dbGalleryData);
-//     const galleries = dbGalleryData.map((gallery) =>
-//       gallery.get({ plain: true })
-//     );
-
     res.render('homepage', {
-      // galleries,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -29,8 +15,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET all galleries for program information
-router.get('/program-information', async (req, res) => {
+// GET all galleries for Upcoming Events
+router.get('/upcoming-events', async (req, res) => {
   try {
     const dbGalleryData = await Gallery.findAll({
       include: [
@@ -45,7 +31,7 @@ console.log(dbGalleryData);
       gallery.get({ plain: true })
     );
 
-    res.render('program-information', {
+    res.render('upcoming-events', {
       galleries,
       loggedIn: req.session.loggedIn,
     });
@@ -55,24 +41,46 @@ console.log(dbGalleryData);
   }
 });
 
-// GET all information for NJ College Information
+// GET all information for NJ College Information page
 router.get('/njcollege-information', async (req, res) => {
   try {
-//     const dbGalleryData = await Gallery.findAll({
-//       include: [
-//         {
-//           model: Painting,
-//           attributes: ['filename', 'description'],
-//         },
-//       ],
-//     });
-// console.log(dbGalleryData);
-//     const galleries = dbGalleryData.map((gallery) =>
-//       gallery.get({ plain: true })
-//     );
-
     res.render('njcollege-information', {
-      // galleries,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET all information for Locations Page
+router.get('/locations', async (req, res) => {
+  try {
+    res.render('locations', {
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET all information for Resources Page
+router.get('/resources', async (req, res) => {
+  try {
+    res.render('resources', {
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET all information for Contact US Page
+router.get('/contact-us', async (req, res) => {
+  try {
+    res.render('contact-us', {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
