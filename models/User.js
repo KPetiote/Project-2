@@ -28,12 +28,22 @@ User.init(
         isEmail: true,
       },
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [6],
       },
+    },
+    inCollege:{
+      type: DataTypes.BOOLEAN,
+    },
+    inHighSchool: {
+      type: DataTypes.BOOLEAN,
     },
   },
   {
