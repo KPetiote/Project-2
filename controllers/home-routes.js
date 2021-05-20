@@ -6,6 +6,32 @@ const withAuth = require('../utils/auth');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
+//     const dbGalleryData = await Gallery.findAll({
+//       include: [
+//         {
+//           model: Painting,
+//           attributes: ['filename', 'description'],
+//         },
+//       ],
+//     });
+// console.log(dbGalleryData);
+//     const galleries = dbGalleryData.map((gallery) =>
+//       gallery.get({ plain: true })
+//     );
+
+    res.render('homepage', {
+      // galleries,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET all galleries for program information
+router.get('/program-information', async (req, res) => {
+  try {
     const dbGalleryData = await Gallery.findAll({
       include: [
         {
@@ -14,12 +40,12 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+console.log(dbGalleryData);
     const galleries = dbGalleryData.map((gallery) =>
       gallery.get({ plain: true })
     );
 
-    res.render('homepage', {
+    res.render('program-information', {
       galleries,
       loggedIn: req.session.loggedIn,
     });
@@ -29,6 +55,31 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET all information for NJ College Information
+router.get('/njcollege-information', async (req, res) => {
+  try {
+//     const dbGalleryData = await Gallery.findAll({
+//       include: [
+//         {
+//           model: Painting,
+//           attributes: ['filename', 'description'],
+//         },
+//       ],
+//     });
+// console.log(dbGalleryData);
+//     const galleries = dbGalleryData.map((gallery) =>
+//       gallery.get({ plain: true })
+//     );
+
+    res.render('njcollege-information', {
+      // galleries,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 // GET one gallery
 // Use the custom middleware before allowing the user to access the gallery
 router.get('/gallery/:id', withAuth, async (req, res) => {
