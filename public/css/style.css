@@ -80,6 +80,11 @@ nav a:hover {
   /* align-items: center; */
 }
 
+figure{
+  margin: 5px 20px 20px 0px;
+  padding-left: 20%;
+  float: left;
+}
 .btn-no-style {
   background: none;
   border: none;
@@ -164,4 +169,9 @@ img {
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
+}
+
+label {
+  font-size: .8rem;
+  color: white;
 }

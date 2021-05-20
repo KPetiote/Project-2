@@ -1009,8 +1009,8 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
-  color: #d9e9e8;
+  background-color: #cc3300;
+  color: white;
 }
 
 .btn.btn-primary:hover {
@@ -1077,7 +1077,7 @@ a:hover {
 }
 
 .btn.btn-link:hover {
-  background-color: #31a9e1;
+  /* background-color: #31a9e1; */
 }
 
 .card {
@@ -1120,7 +1120,7 @@ form .form-group {
 
 form .form-input,
 form .form-textarea {
-  display: block;
+  /* display: block; */
 }
 
 form select {
@@ -1142,16 +1142,18 @@ form .form-label {
 form .form-input {
   width: 100%;
   padding: 0.75rem;
-  color: #1a1a1a;
+  color: white;
   background-color: #ffffff;
   margin: 0.625rem 0;
   font-size: 1.2rem;
   border: 1px solid #484848;
   border-radius: 0.3rem;
+
 }
 
 form .form-input.form-input-squared {
   border-radius: 0;
+
 }
 
 form [type='checkbox'],
