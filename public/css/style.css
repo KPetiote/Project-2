@@ -175,3 +175,7 @@ label {
   font-size: .8rem;
   color: white;
 }
+
+select {
+  display: inline-flex;
+}

@@ -78,9 +78,9 @@ router.get('/resources', async (req, res) => {
 });
 
 // GET all information for Contact US Page
-router.get('/contact-us', async (req, res) => {
+router.get('/calendar', async (req, res) => {
   try {
-    res.render('contact-us', {
+    res.render('calendar', {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
