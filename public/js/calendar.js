@@ -175,6 +175,16 @@ window.addEventListener("load", function () {
     year.appendChild(opt);
   }
 
+  var school = document.getElementById("cal-school");
+  for (var i = 0; i < cal.sCollege.length; i++) {
+    var opt = document.createElement("option");
+    opt.value = i;
+    opt.innerHTML = cal.sCollege[i];
+    if (i==nowYear) { opt.selected = true; }
+    school.appendChild(opt);
+  }
+
+
   // (G4) START - DRAW CALENDAR
   document.getElementById("cal-set").addEventListener("click", cal.list);
   cal.list();
