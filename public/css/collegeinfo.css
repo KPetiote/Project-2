@@ -2,21 +2,20 @@
 #header{
     background-size: cover;
     background-position-y: 40%;
-    color:white;
-    background-color:rgb(16, 7, 143);
-    position:relative !important;
+    color:black;
+    /* position:relative !important; */
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 /* City Search width */
 #search-college{
-    width:80%;
+    width:100%;
 }
 
 /* fontawesome magnifying glass icon */
 #search-button-icon{
     width:15px;
+    margin-bottom: 5px;
     display:inline-block;
 }
 
@@ -33,7 +32,6 @@
 
 
 .weather-card{
-    width: 9rem;
     background-color: rgb(216, 63, 17);
     color: white;
     text-align: center;
